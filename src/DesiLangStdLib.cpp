@@ -859,17 +859,17 @@ void populateConverters()
 {
 	/// initalizers
 
-	func("Bool", Void, Void, Bool,
+	func("bool", Void, Void, Bool,
 		 retrn false;
 		 ,
 		 "false");
 
-	func("Int", Void, Void, Int,
+	func("ank", Void, Void, Int,
 		 retrn 0;
 		 ,
 		 "0");
 
-	func("Dub", Void, Void, Dub,
+	func("dashamlav", Void, Void, Dub,
 		 retrn 0.0;
 		 ,
 		 "0.0");
@@ -882,27 +882,27 @@ void populateConverters()
 	/// casting
 
 	// to bool
-	func("Bool", Void, Bool, Bool,
+	func("bool", Void, Bool, Bool,
 		 retrn right,
 		 "$:");
 
-	func("Bool", Void, Int, Bool,
+	func("bool", Void, Int, Bool,
 		 retrn right != 0,
 		 "($: != 0)");
 
-	func("Bool", Void, Dub, Bool,
+	func("bool", Void, Dub, Bool,
 		 retrn right != 0,
 		 "($: != 0.0)");
 
-	func("Bool", Bool, Void, Bool,
+	func("bool", Bool, Void, Bool,
 		 retrn left,
 		 "$.");
 
-	func("Bool", Int, Void, Bool,
+	func("bool", Int, Void, Bool,
 		 retrn left != 0,
 		 "($. != 0)");
 
-	func("Bool", Dub, Void, Bool,
+	func("bool", Dub, Void, Bool,
 		 retrn left != 0,
 		 "($. != 0.0)");
 
@@ -924,32 +924,32 @@ void populateConverters()
 		 "((unsigned char)$.)");
 
 	// to Int
-	func("Int", Void, Bool, Int,
+	func("ank", Void, Bool, Int,
 		 retrn(right ? 1 : 0),
 		 "($: ? 1 : 0)");
 
-	func("Int", Void, Byte, Int,
+	func("ank", Void, Byte, Int,
 		 retrn(int) right,
 		 "((int)$:)");
 
-	func("Int", Void, Dub, Int,
+	func("ank", Void, Dub, Int,
 		 retrn(int) right,
 		 "((int)$:)");
 
-	func("Int", Bool, Void, Int,
+	func("ank", Bool, Void, Int,
 		 retrn(left ? 1 : 0),
 		 "($. ? 1 : 0)");
 
-	func("Int", Byte, Void, Int,
+	func("ank", Byte, Void, Int,
 		 retrn(int) left,
 		 "((int)$.)");
 
-	func("Int", Dub, Void, Int,
+	func("ank", Dub, Void, Int,
 		 retrn(int) left,
 		 "((int)$.)");
 
 	addAction(
-		"Int", String, Void, Int,
+		"ank", String, Void, Int,
 		LAMBDA_HEADER {
 			int *out = (int *)malloc(sizeof(int));
 			*out = stringToInt(dlcnStr2CppStr(leftIn));
@@ -965,24 +965,24 @@ void populateConverters()
 		});
 
 	// to Dub
-	func("Dub", Void, Bool, Dub,
+	func("dashamlav", Void, Bool, Dub,
 		 retrn(right ? 1 : 0),
 		 "($: ? 1.0 : 0.0)");
 
-	func("Dub", Void, Int, Dub,
+	func("dashamlav", Void, Int, Dub,
 		 retrn(double) right,
 		 "((double)$:)");
 
-	func("Dub", Bool, Void, Dub,
+	func("dashamlav", Bool, Void, Dub,
 		 retrn(left ? 1 : 0),
 		 "($. ? 1.0 : 0.0)");
 
-	func("Dub", Int, Void, Dub,
+	func("dashamlav", Int, Void, Dub,
 		 retrn(double) left,
 		 "((double)$.)");
 
 	addAction(
-		"Dub", String, Void, Dub,
+		"dashamlav", String, Void, Dub,
 		LAMBDA_HEADER {
 			double *out = (double *)malloc(sizeof(double));
 			*out = stringToDouble(dlcnStr2CppStr(leftIn));
@@ -1280,7 +1280,7 @@ void populateStringFuncs()
 		});
 
 	addAction(
-		"String", Void, Void, String,
+		"shabd", Void, Void, String,
 		LAMBDA_HEADER {
 			return cppStr2dlcnStr("");
 		},
@@ -1289,7 +1289,7 @@ void populateStringFuncs()
 		});
 
 	addAction(
-		"String", String, Void, String,
+		"shabd", String, Void, String,
 		LAMBDA_HEADER {
 			return cppStr2dlcnStr(dlcnStr2CppStr(leftIn));
 		},
@@ -1298,7 +1298,7 @@ void populateStringFuncs()
 		});
 
 	addAction(
-		"String", Int, Void, String,
+		"shabd", Int, Void, String,
 		LAMBDA_HEADER {
 			return cppStr2dlcnStr(to_string(*((int *)leftIn)));
 		},
@@ -1312,7 +1312,7 @@ void populateStringFuncs()
 		});
 
 	addAction(
-		"String", Dub, Void, String,
+		"shabd", Dub, Void, String,
 		LAMBDA_HEADER {
 			return cppStr2dlcnStr(doubleToString(*((double *)leftIn)));
 		},
@@ -1326,7 +1326,7 @@ void populateStringFuncs()
 		});
 
 	addAction(
-		"String", Bool, Void, String,
+		"shabd", Bool, Void, String,
 		LAMBDA_HEADER {
 			if (*((bool *)leftIn))
 			{
@@ -1405,7 +1405,7 @@ void populateStringFuncs()
 		});
 
 	addAction(
-		"sub", String, makeTuple(vector<NamedType>{NamedType{"a", Int}, NamedType{"b", Int}}, true), String,
+		"hissa", String, makeTuple(vector<NamedType>{NamedType{"a", Int}, NamedType{"b", Int}}, true), String,
 		LAMBDA_HEADER {
 			Type RightType = makeTuple(vector<NamedType>{NamedType{"a", Int}, NamedType{"b", Int}}, true);
 			int start = getValFromTuple<int>(rightIn, RightType, "a");
@@ -1413,7 +1413,7 @@ void populateStringFuncs()
 			string str = dlcnStr2CppStr(leftIn);
 			if (start < 0 || end > int(str.size()) || start > end)
 			{
-				throw DesiLangError("invalid arguments sent hua to String.sub", RUNTIME_ERROR);
+				throw DesiLangError("invalid arguments sent hua to String.hissa", RUNTIME_ERROR);
 			}
 			return cppStr2dlcnStr(str.substr(start, end - start));
 		},
@@ -1431,7 +1431,7 @@ void populateStringFuncs()
 		});
 
 	addAction(
-		"input", String, Void, String,
+		"lelo", String, Void, String,
 		LAMBDA_HEADER {
 			string in;
 			cout << dlcnStr2CppStr(leftIn);
