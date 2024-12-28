@@ -582,12 +582,12 @@ void populateBasicTypes()
 	String = makeTuple(vector<NamedType>{NamedType{"_size", Int}, NamedType{"_data", Byte->getPtr()}}, false);
 
 	addType(Void, "Void");
-	addType(Bool, "Bool");
+	addType(Bool, "bool");
 	addType(Byte, "Byte");
-	addType(Int, "Int");
-	addType(Dub, "Dub");
-	addType(String, "String");
-	addType(Whatev, "Whatev");
+	addType(Int, "ank");
+	addType(Dub, "dashamlav");
+	addType(String, "shabd");
+	addType(Whatev, "kuchbhi");
 }
 
 void populateConstants()
@@ -595,10 +595,10 @@ void populateConstants()
 	table->addNode(AstActionWrapper::make(voidAction), "void");
 
 	bool trueVal = true;
-	addConst(&trueVal, Bool, "tru");
+	addConst(&trueVal, Bool, "sach");
 
 	bool falseVal = false;
-	addConst(&falseVal, Bool, "fls");
+	addConst(&falseVal, Bool, "jhut");
 
 	// version constant
 	{
@@ -1008,9 +1008,9 @@ void populateStdFuncs()
 		 "fputs(\"\\n\", stdout)");
 
 	func("print", Void, Bool, Void,
-		 cout << (right ? "tru" : "fls") << endl;
+		 cout << (right ? "sach" : "jhut") << endl;
 		 ,
-		 "fputs($:?\"tru\\n\":\"fls\\n\", stdout)");
+		 "fputs($:?\"sach\\n\":\"jhut\\n\", stdout)");
 
 	func("print", Void, Byte, Void,
 		 cout << right << endl;
@@ -1330,11 +1330,11 @@ void populateStringFuncs()
 		LAMBDA_HEADER {
 			if (*((bool *)leftIn))
 			{
-				return cppStr2dlcnStr("tru");
+				return cppStr2dlcnStr("sach");
 			}
 			else
 			{
-				return cppStr2dlcnStr("fls");
+				return cppStr2dlcnStr("jhut");
 			}
 		},
 		ADD_CPP_HEADER {
@@ -1345,12 +1345,12 @@ void populateStringFuncs()
 			prog->pushExpr();
 			left->addToProg(prog);
 			prog->popExpr();
-			prog->code(" ? \"tru\" : \"fls\"");
+			prog->code(" ? \"sach\" : \"jhut\"");
 			prog->popExpr();
 		});
 
 	addAction(
-		"len", String, Void, Int,
+		"size", String, Void, Int,
 		LAMBDA_HEADER {
 			int *out = (int *)malloc(sizeof(int));
 			*out = getValFromTuple<int>(leftIn, String, "_size");
@@ -1685,9 +1685,9 @@ void populateArrayFuncs()
 					{
 						throw DesiLangError("not yet implemented", INTERNAL_ERROR);
 					},
-					"len");
+					"size");
 			}),
-		"len");
+		"size");
 
 	globalNamespace->addNode(
 		AstWhatevToActionFactory::make(
@@ -1787,7 +1787,7 @@ void populateIntArrayAndFuncs()
 		});
 
 	addAction(
-		"len", IntArray, Void, Int,
+		"size", IntArray, Void, Int,
 		LAMBDA_HEADER {
 			int *out = (int *)malloc(sizeof(int));
 			*out = getValFromTuple<int>(leftIn, IntArray, "_size");
