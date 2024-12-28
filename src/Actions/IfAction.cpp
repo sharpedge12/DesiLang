@@ -109,7 +109,7 @@ public:
 	string getDescription()
 	{
 		// Creates a tree-like structure for displaying the action, condition, and both branches (if and else).
-		string branch = str::makeRootUpBinaryTree("╭┴╮\n│ │", "fls", "tru", elseAction->getDescription(), ifAction->getDescription());
+		string branch = str::makeRootUpBinaryTree("╭┴╮\n│ │", "jhut", "sach", elseAction->getDescription(), ifAction->getDescription());
 		return str::makeRootUpBinaryTree("?", condition->getReturnType()->getName(), "", condition->getDescription(), branch);
 	}
 
