@@ -1,13 +1,15 @@
 # DesiLang
 
-DesiLang is a programming language designed to bring the essence of Indian languages into the world of coding. It allows developers to write code using syntax and keywords inspired by Indian linguistic constructs, making programming more intuitive for native speakers.
+**DesiLang** is a simple, easy-to-learn programming language designed with Hinglish syntax (a blend of Hindi and English) to make programming more accessible to people who are comfortable with both languages. Whether you're new to programming or looking to enhance your coding skills, **DesiLang** aims to simplify the learning process for non-English speakers.
 
 ![DesiLang Icon](icon.jpg)
 
 ## Features
 
-- **Indian Language Syntax**: Write code using constructs inspired by Indian languages.
-- **Easy Integration**: Seamlessly integrates with existing development workflows.
+- **Easy to learn**: The syntax is intuitive and closer to how people in India and other Hinglish-speaking regions often think and speak.
+- **Designed for beginners**: No need to memorize complex syntax. Focus on logic and core programming concepts.
+- **Based on C++**: The language uses C++ for compilation and execution, offering strong performance and reliability.
+- **Versatile**: Whether you're building simple scripts, algorithms, or data structures, **DesiLang** can handle it.
 - **Open Source**: Licensed under the MIT License.
 
 ## Getting Started
@@ -74,8 +76,6 @@ We welcome contributions to enhance DesiLang. To contribute:
 3. **Commit Your Changes**: After making changes, commit them with a descriptive message.
 4. **Push to the Branch**: Use `git push origin feature-branch-name`.
 5. **Create a Pull Request**: Navigate to your forked repository and click on 'New Pull Request'.
-
-Please read `CONTRIBUTING.md` for more details on our code of conduct and the process for submitting pull requests.
 
 ## License
 
