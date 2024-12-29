@@ -1,0 +1,18 @@
+a: jhut
+b: 10
+
+a ? (
+    print: "x"
+)
+| b >= 10 ? (
+    print: "y"
+) 
+| (
+    print: "z"
+)
+
+
+// expected output :
+y
+\\
+

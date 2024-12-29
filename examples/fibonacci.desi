@@ -1,0 +1,11 @@
+
+fibonacci :: {n : ank} -> {ank}: (
+  x: in.n
+  in.n > 1 ? (
+    x: (fibonacci: (in.n - 1)) + (fibonacci : (in.n - 2))
+  )
+  x
+)
+
+result: fibonacci: 20
+print : result
