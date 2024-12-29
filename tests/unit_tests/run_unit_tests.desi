@@ -1,0 +1,139 @@
+
+#conditionals
+output: runCmd: "desicode.exe tests/unit_tests/conditionals.desi"
+expected: "y
+"
+check: "CONDITIONALS" , output , expected
+
+
+#constants
+output: runCmd: "desicode.exe tests/unit_tests/constants.desi"
+expected: "15
+"
+check: "CONSTANTS" , output , expected
+
+
+#function
+output: runCmd: "desicode.exe tests/unit_tests/function.desi"
+expected: "12
+"
+check: "FUNCTION" , output , expected
+
+
+#kuchbhi
+output: runCmd: "desicode.exe tests/unit_tests/kuchbhi.desi"
+expected: "10
+hi
+10.78
+"
+check: "KUCHBHI" , output , expected
+
+
+#loop
+output: runCmd: "desicode.exe tests/unit_tests/loop.desi"
+expected: "24
+"
+check: "LOOP" , output , expected
+
+
+#operator
+output: runCmd: "desicode.exe tests/unit_tests/operator.desi"
+expected: "5
+4.75
+6
+1
+4
+2
+2.75
+2
+jhut
+jhut
+sach
+sach
+sach
+jhut
+sach
+jhut
+"
+check: "OPERATOR" , output , expected
+
+
+#precedence
+output: runCmd: "desicode.exe tests/unit_tests/precedence.desi"
+expected: "11
+3
+6
+sach
+"
+check: "PRECEDENCE" , output , expected
+
+
+#shabds
+output: runCmd: "desicode.exe tests/unit_tests/shabds.desi"
+expected: "hello
+a
+bxyz
+we
+6
+4
+89.342
+sach
+jhut
+jhut
+"
+check: "SHABD" , output , expected
+
+printBoldGreen :: {text: shabd}:
+(
+    print: (asciiEscape: 1) + (asciiEscape: 32) + in.text + (asciiEscape: 0) 
+)
+
+printItalicGreen :: {text: shabd}:
+(
+    print: (asciiEscape: 3) + (asciiEscape: 32) + in.text + (asciiEscape: 0)
+)
+
+printBoldRed :: {text: shabd}:
+(
+    print: (asciiEscape: 1) + (asciiEscape: 31) + in.text + (asciiEscape: 0)
+)
+
+printItalicRed :: {text: shabd}:
+(
+    print: (asciiEscape: 3) + (asciiEscape: 31) + in.text + (asciiEscape: 0)
+)
+
+asciiEscape :: {ank} -> {shabd}:
+(
+	(27).ascii + "[" + in.shabd + "m"
+)
+
+printAccepted :: {name : shabd , output : shabd , expected : shabd} :(
+    printBoldGreen:  in.name + " PASSED"
+    print
+    printBoldGreen:  "Output: "
+    printItalicGreen: in.output
+    printBoldGreen:  "Expected: "
+    printItalicGreen: in.expected
+    print
+)
+
+printFailed :: {name : shabd , output : shabd , expected : shabd} :(
+    printBoldRed:  in.name + " FAILED"
+    print
+    printBoldRed:  "Output: "
+    printItalicRed: in.output
+    printBoldRed:  "Expected: "
+    printItalicRed: in.expected
+    print
+
+)
+
+
+check :: {name : shabd , output : shabd , expected : shabd } :(
+    in.output = in.expected ? (
+        printAccepted: in.name , in.output , in.expected
+    )|(
+        printFailed: in.name , in.output , in.expected
+    )
+)

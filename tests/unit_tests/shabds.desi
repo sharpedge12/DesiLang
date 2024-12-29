@@ -1,0 +1,23 @@
+myStr: "hello"
+print: myStr
+print: "a\nb"+"xyz"
+print: "qwerty".hissa: 1, 3
+print: "qwerty".size
+print: 4.shabd
+print: 89.342.shabd
+print: "abc" = "abc"
+print: "abc" = "xyz"
+print: "abc" = "abcd"
+
+//expected output :
+hello
+a
+bxyz
+we
+6
+4
+89.342
+sach
+jhut
+jhut
+\\

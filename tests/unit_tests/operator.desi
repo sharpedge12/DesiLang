@@ -1,0 +1,36 @@
+print: 2+3
+print: 1.5+3.25
+print: 2*3
+print: 3-2
+print: 12/3
+print: 11/4
+print: 11.0/4.0
+print: 17%5
+print: 6=4
+print: 9!=9
+print: 6>4
+print: 7<=7
+print: sach && 4=4
+print: sach && 4=2
+print: sach || 4=2
+print: !sach || 4=2
+
+// expected output :
+5
+4.75
+6
+1
+4
+2
+2.75
+2
+jhut
+jhut
+sach
+sach
+sach
+jhut
+sach
+jhut
+\\
+

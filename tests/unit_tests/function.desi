@@ -1,0 +1,9 @@
+func :: {x : ank , y : ank}:(
+    print: in.x + in.y
+)
+
+func: 5 , 7
+
+// expected output :
+12
+\\

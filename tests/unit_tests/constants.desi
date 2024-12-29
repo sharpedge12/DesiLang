@@ -1,0 +1,7 @@
+print: c * 5
+
+c :: 3
+
+// expected output :
+15
+\\

@@ -1,0 +1,14 @@
+func :: {kuchbhi}:
+(
+	print: in
+)
+
+func: 10
+func: "hi"
+func: 10.78
+
+//expected output :
+10
+hi
+10.78
+\\

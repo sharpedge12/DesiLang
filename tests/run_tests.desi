@@ -1,0 +1,7 @@
+# Run unit tests
+print: "UNIT TESTS: "
+print: runCmd: "desicode.exe tests/unit_tests/run_unit_tests.desi"
+
+# Run  integration
+print: "INTEGRATION TESTS: "
+print: runCmd: "desicode.exe tests/integration_tests/run_integration_tests.desi"

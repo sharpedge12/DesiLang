@@ -1,0 +1,89 @@
+
+#hello world
+output: runCmd: "desicode.exe tests/integration_tests/hello_world.desi"
+expected: "Hello World!
+"
+check: "Hello_World" , output , expected
+
+
+#Fizzbuzz
+output: runCmd: "desicode.exe tests/integration_tests/FizzBuzz.desi"
+expected: "1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+16
+17
+Fizz
+19
+Buzz
+"
+check: "CONSTANTS" , output , expected
+
+
+
+printBoldGreen :: {text: shabd}:
+(
+    print: (asciiEscape: 1) + (asciiEscape: 32) + in.text + (asciiEscape: 0) 
+)
+
+printItalicGreen :: {text: shabd}:
+(
+    print: (asciiEscape: 3) + (asciiEscape: 32) + in.text + (asciiEscape: 0)
+)
+
+printBoldRed :: {text: shabd}:
+(
+    print: (asciiEscape: 1) + (asciiEscape: 31) + in.text + (asciiEscape: 0)
+)
+
+printItalicRed :: {text: shabd}:
+(
+    print: (asciiEscape: 3) + (asciiEscape: 31) + in.text + (asciiEscape: 0)
+)
+
+asciiEscape :: {ank} -> {shabd}:
+(
+	(27).ascii + "[" + in.shabd + "m"
+)
+
+printAccepted :: {name : shabd , output : shabd , expected : shabd} :(
+    printBoldGreen:  in.name + " PASSED"
+    print
+    printBoldGreen:  "Output: "
+    printItalicGreen: in.output
+    printBoldGreen:  "Expected: "
+    printItalicGreen: in.expected
+    print
+)
+
+printFailed :: {name : shabd , output : shabd , expected : shabd} :(
+    printBoldRed:  in.name + " FAILED"
+    print
+    printBoldRed:  "Output: "
+    printItalicRed: in.output
+    printBoldRed:  "Expected: "
+    printItalicRed: in.expected
+    print
+
+)
+
+
+check :: {name : shabd , output : shabd , expected : shabd } :(
+    in.output = in.expected ? (
+        printAccepted: in.name , in.output , in.expected
+    )|(
+        printFailed: in.name , in.output , in.expected
+    )
+)
