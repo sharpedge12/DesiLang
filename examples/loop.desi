@@ -1,12 +1,12 @@
-i: 4
-x: 1 
+pehla: 4
+dusra: 1 
 i > 0 @ (
-    x: x * i
-    i: i - 1
+    dusra: dusra * i
+    pehla: pehla - 1
 )
 
-print: x
+print: dusra
 
-// expected output :
+// Iska Output Ye Hai :
 24
 \\

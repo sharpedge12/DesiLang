@@ -1,18 +1,18 @@
-a: jhut
-b: 10
+ek: jhut
+do: 10
 
-a ? (
-    print: "x"
+ek ? (
+    print: "Ek sach hai"
 )
-| b >= 10 ? (
-    print: "y"
+| do > 5 ? (
+    print: "Ek jhut hai orr do 5 se bada hai"
 ) 
 | (
-    print: "z"
+    print: "EK jhut hai orr do 5 se chota hai ya 5 hai"
 )
 
 
-// expected output :
-y
+// Iska Output Ye Hai :
+Ek jhut hai orr do 5 se bada hai
 \\
 

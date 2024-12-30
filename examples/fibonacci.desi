@@ -1,11 +1,15 @@
 
-fibonacci :: {n : ank} -> {ank}: (
+fibonacciKaFunction :: {n : ank} -> {ank}: (
   x: in.n
   in.n > 1 ? (
-    x: (fibonacci: (in.n - 1)) + (fibonacci : (in.n - 2))
+    x: (fibonacciKaFunction: (in.n - 1)) + (fibonacciKaFunction : (in.n - 2))
   )
   x
 )
 
-result: fibonacci: 20
-print : result
+uttar : fibonacciKaFunction: 20
+print : uttar
+
+// Iska Output Ye Hai :
+6765
+\\

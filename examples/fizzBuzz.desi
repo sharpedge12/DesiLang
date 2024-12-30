@@ -1,12 +1,10 @@
 # FizzBuzz
 
-fizzBuzz: 1, 20
+fizzBuzzKaFunction: 1, 20
 
-fizzBuzz :: {start: ank, end: ank}: (
+fizzBuzzKaFunction :: {pehla: ank, aakhri: ank}: (
 	
-	i: in.start | i <= in.end | i: i+1 @ (
-		
-		# use conditionals to print the right thing
+	i: in.pehla | i <= in.aakhri | i: i+1 @ (
 		
 		i % 3 = 0 && i % 5 = 0 ?
 			print: "FizzBuzz"
@@ -22,7 +20,7 @@ fizzBuzz :: {start: ank, end: ank}: (
 )
 
 
-// expected output :
+// Iska Output Ye Hai :
 1
 2
 Fizz

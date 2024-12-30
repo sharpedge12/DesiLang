@@ -1,7 +1,7 @@
-print: c * 5
+print: yeEkConstantHai * 5
 
-c :: 3
+yeEkConstantHai :: 3
 
-// expected output :
+// Iska Output Ye Hai :
 15
 \\

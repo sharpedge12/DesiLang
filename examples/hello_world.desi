@@ -1,7 +1,7 @@
-#Hello World
+#Namaste Duniya
 
-print: "Hello World!"
+print: "Namaste Duniya!"
 
-// expected output :
-Hello World!
+// Iska Output Ye Hai :
+Namaste Duniya!
 \\

@@ -15,7 +15,7 @@ print: sach && 4=2
 print: sach || 4=2
 print: !sach || 4=2
 
-// expected output :
+// Iska Output Ye Hai :
 5
 4.75
 6

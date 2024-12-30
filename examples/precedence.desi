@@ -3,7 +3,7 @@ print: 4-2+1
 print: 1+8%5+2
 print: 8>2=5.3<=7.9
 
-// expected output :
+// Iska Output Ye Hai :
 11
 3
 6

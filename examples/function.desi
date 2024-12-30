@@ -1,9 +1,9 @@
-func :: {x : ank , y : ank}:(
-    print: in.x + in.y
+yeEkExampleFunctionHai :: {pehla : ank , dusra : ank}:(
+    print: in.pehla + in.dusra
 )
 
-func: 5 , 7
+yeEkExampleFunctionHai: 5 , 7
 
-// expected output :
+// Iska Output Ye Hai :
 12
 \\
